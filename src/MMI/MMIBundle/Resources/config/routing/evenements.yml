@@ -1,0 +1,30 @@
+evenements:
+    path:     /
+    defaults: { _controller: "MMIMMIBundle:evenements:index" }
+
+evenements_show:
+    path:     /{id}/show
+    defaults: { _controller: "MMIMMIBundle:evenements:show" }
+
+evenements_new:
+    path:     /new
+    defaults: { _controller: "MMIMMIBundle:evenements:new" }
+
+evenements_create:
+    path:     /create
+    defaults: { _controller: "MMIMMIBundle:evenements:create" }
+    requirements: { _method: post }
+
+evenements_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MMIMMIBundle:evenements:edit" }
+
+evenements_update:
+    path:     /{id}/update
+    defaults: { _controller: "MMIMMIBundle:evenements:update" }
+    requirements: { _method: post|put }
+
+evenements_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MMIMMIBundle:evenements:delete" }
+    requirements: { _method: post|delete }

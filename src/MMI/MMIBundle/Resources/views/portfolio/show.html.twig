@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+{{ parent() }}
+<h1>{{ entity.prenom }} {{ entity.nom }}</h1>
+    <div class="line"></div>
+<br>
+			<h3>Description</h3>
+			<p>{{ entity.description }}</p>
+
+			<h3>Lien</h3>
+			<p><a href="{{ entity.link }}">{{ entity.link }}</a></p>  
+			<div class="center">
+	<iframe src="{{ entity.link }}" width="800" height="500">
+		<p>Votre navigateur ne supporte pas l'élément iframe</p>
+	</iframe>
+	</div>
+<ul class="record_actions">
+	<li>
+		<a style="color:black" class="btn btn-default" href="{{ path('portfolio') }}">
+			Retour à la liste
+		</a>
+	</li>
+	<li>
+		<a style="color:black" class="btn btn-default" href="{{ path('portfolio_edit', { 'id': entity.id }) }}">
+			Modifier
+		</a>
+	</li>
+	<li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

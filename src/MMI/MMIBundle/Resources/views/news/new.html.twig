@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{parent()}}
+    <h1>Ajouter une nouvelle</h1>
+<div class="line"></div>
+<br>
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a style="color:black" class="btn btn-default" href="{{ path('news') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

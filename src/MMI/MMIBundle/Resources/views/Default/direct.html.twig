@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../bundles/mmimmi/js/heure.js"></script>
+	<link rel="stylesheet" href="../bundles/mmimmi/css/styledirect.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="../bundles/mmimmi/js/vticker.js"></script>
+	<script>
+		$(function() {
+			$('.visible').vTicker();
+		});
+	</script>
+</head>
+<body>
+	<div class="img">
+
+		 <video  autoplay loop style="position:absolute;z-index:0;" width="1920" height="1080" src="http://195.83.128.55/~mmi13f09/Habillage MMITV3 - Jingle et Bumpers.mp4" frameborder="0" allowfullscreen></video>
+
+
+
+
+	<img style="position:absolute;z-index:0;" src="../bundles/mmimmi/images/logobleu.png" alt="logochannel" class="logo" width="200px">
+		<div id="date_heure"></div>
+		<script type="text/javascript">window.onload = date_heure('date_heure');</script>
+		<div class="bandeau2">
+			<div class='content'>
+				<div class='visible'>
+					<ul>
+					{% for new in news %}
+					    <li>{{ new.description }}</li>
+					{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	<script>
+	setInterval(function() {
+		$.ajax({
+			url: '/projets4/web/app_dev.php/get-news',
+			method: 'GET',
+			success: function() {
+				$('ul').eq(0).html();
+			}
+		});
+	}, 100000);
+	</script>
+	</body>
+	</html>

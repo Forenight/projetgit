@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{parent()}}
+    <h1>{{ entity.nom }}</h1>
+<div class="line"></div>
+<br>
+            <h3>Description</h3>
+            <p>{{ entity.description }}</p>
+            <h3>Playlist</h3>
+            <p>{{ entity.Playlist }}</p>
+            <h3>Date d'ajout</h3>
+            <p>{{ entity.time|date('Y-m-d H:i:s') }}</p>
+            <h3>Auteur</h3>
+            <p>{{ entity.auteur }}</p>
+
+            <p><a href="https://www.youtube.com/watch?v={{ entity.link }}">Lien</a></p>
+            </tr>
+        </tbody>
+    </table>
+<div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ entity.link }}" frameborder="0" allowfullscreen></iframe>
+</div>
+        <ul class="record_actions">
+        <a class="btn btn-default" href="{{ path('videos') }}">
+            Retour à la liste
+        </a>
+        <a class="btn btn-default" href="{{ path('videos_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+        {{ form(delete_form) }}
+</ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+videos:
+    path:     /
+    defaults: { _controller: "MMIMMIBundle:videos:index" }
+
+videos_show:
+    path:     /{id}/show
+    defaults: { _controller: "MMIMMIBundle:videos:show" }
+
+videos_new:
+    path:     /new
+    defaults: { _controller: "MMIMMIBundle:videos:new" }
+
+videos_create:
+    path:     /create
+    defaults: { _controller: "MMIMMIBundle:videos:create" }
+    requirements: { _method: post }
+
+videos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MMIMMIBundle:videos:edit" }
+
+videos_update:
+    path:     /{id}/update
+    defaults: { _controller: "MMIMMIBundle:videos:update" }
+    requirements: { _method: post|put }
+
+videos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MMIMMIBundle:videos:delete" }
+    requirements: { _method: post|delete }

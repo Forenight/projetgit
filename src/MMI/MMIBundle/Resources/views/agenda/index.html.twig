@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{parent()}}
+<h1>Admin Panel - Agenda</h1>
+<div class="line"></div>
+<body>
+<br>
+<ul>
+    <li>
+        <a style="color:black" class="btn btn-default" href="{{ path('agenda_new') }}">
+            Ajouter des devoirs
+        </a>
+    </li>
+</ul>
+        {% for entity in entities %}
+        <div class="portfolio">
+        <table class="records_list portfolio2">
+        <tr>
+            <td class="port">{{ entity.groupe }}</td>
+            <td class="port">{{ entity.promotion }}</td>
+            <td class="port">{{ entity.description }}</td>
+
+            <td class="port"><a class="btn btn-default" href="{{ path('agenda_show', { 'id': entity.id }) }}">Voir</a></td>
+            <td class="port"><a class="btn btn-default" href="{{ path('agenda_edit', { 'id': entity.id }) }}">Modifier</a></td>
+        </td>
+    </tr>
+    </table>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}

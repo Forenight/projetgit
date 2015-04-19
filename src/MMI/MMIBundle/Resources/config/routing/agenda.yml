@@ -1,0 +1,30 @@
+agenda:
+    path:     /
+    defaults: { _controller: "MMIMMIBundle:agenda:index" }
+
+agenda_show:
+    path:     /{id}/show
+    defaults: { _controller: "MMIMMIBundle:agenda:show" }
+
+agenda_new:
+    path:     /new
+    defaults: { _controller: "MMIMMIBundle:agenda:new" }
+
+agenda_create:
+    path:     /create
+    defaults: { _controller: "MMIMMIBundle:agenda:create" }
+    requirements: { _method: post }
+
+agenda_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MMIMMIBundle:agenda:edit" }
+
+agenda_update:
+    path:     /{id}/update
+    defaults: { _controller: "MMIMMIBundle:agenda:update" }
+    requirements: { _method: post|put }
+
+agenda_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MMIMMIBundle:agenda:delete" }
+    requirements: { _method: post|delete }

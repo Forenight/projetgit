@@ -1,0 +1,30 @@
+playlist:
+    path:     /
+    defaults: { _controller: "MMIMMIBundle:Playlist:index" }
+
+playlist_show:
+    path:     /{id}/show
+    defaults: { _controller: "MMIMMIBundle:Playlist:show" }
+
+playlist_new:
+    path:     /new
+    defaults: { _controller: "MMIMMIBundle:Playlist:new" }
+
+playlist_create:
+    path:     /create
+    defaults: { _controller: "MMIMMIBundle:Playlist:create" }
+    requirements: { _method: post }
+
+playlist_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MMIMMIBundle:Playlist:edit" }
+
+playlist_update:
+    path:     /{id}/update
+    defaults: { _controller: "MMIMMIBundle:Playlist:update" }
+    requirements: { _method: post|put }
+
+playlist_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MMIMMIBundle:Playlist:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{parent()}}
+    <h1>Modifier une vidéo</h1>
+       <div class="line"></div>
+<br>
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a style="color:black" class="btn btn-default" href="{{ path('videos') }}">
+            Retour à la liste
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

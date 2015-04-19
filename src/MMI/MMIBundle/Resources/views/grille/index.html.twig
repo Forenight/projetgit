@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+{% block javascript %}
+<script src='{{ asset('bundles/mmimmi/fullcalendar/lib/jquery.min.js') }}'></script>
+    {# ========= JAVASCRIPT ========= #}
+    {% block javascripts %}
+       
+
+       <script src='{{ asset('bundles/mmimmi/fullcalendar/lib/moment.min.js') }}'></script>
+
+<script src='{{ asset('bundles/mmimmi/fullcalendar/lib/jquery-ui.custom.min.js') }}'></script>
+<script src='{{ asset('bundles/mmimmi/fullcalendar/fullcalendar.min.js') }}'></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: '2015-04-16',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+            {% for playlists in playlists %}
+                {
+                    title: '{{ playlists.titre }}',
+                    start: '{{ playlists.jourPassage|date('Y-m-d') }}T{{ playlists.heurePassage|date('H:i:s') }}'
+                },
+            {% endfor %}
+                
+            ]
+        });
+        
+    });
+
+
+</script>
+
+    {% endblock %}
+{% endblock %}
+
+{% block contenu %}
+    {{ parent() }}
+
+    
+
+
+   <div id='wrap'>
+
+        
+
+        <div id='calendar'></div>
+
+        
+
+    </div>
+
+{% endblock %}

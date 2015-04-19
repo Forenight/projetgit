@@ -1,0 +1,77 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: beige;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	text-align: center;
+}
+.menu div {
+	width: 250px;
+	height: 170px;
+	margin: 30px;
+	display: inline-block !important;
+	padding-top: 70px;
+	padding-left: 100px;
+}
+.alert-success {
+	transition: all 1s;
+}
+.alert-success:hover {
+	background-color: #a6f08f;
+	transition: all 1s;
+}
+.alert-success2 {
+	transition: all 1s;
+	background-color: #d8f0e3;
+	color: #337662;
+	border-color: #c0e9d0;
+}
+.alert-success2:hover {
+	background-color: #90f0bb;
+	transition: all 1s;
+}
+.alert-info {
+	transition: all 1s;
+}
+.alert-info:hover {
+	background-color: #90d0f0;
+	transition: all 1s;
+}
+.alert-info2 {
+	transition: all 1s;
+	background-color: #d7d3f7;
+	color: #4e2f8f;
+	border-color: #ccc6f1;
+}
+.alert-info2:hover {
+	background-color: #a094f7;
+	transition: all 1s;
+}
+.alert-danger2 {
+	transition: all 1s;
+	background-color: #f7d6f7;
+	color: #8f3260;
+	border-color: #ebc9ea;
+}
+.alert-danger2:hover {
+	transition: all 1s;
+	background-color: #f794f6;
+}
+.alert-warning {
+	transition: all 1s;
+}
+.alert-warning:hover {
+	background-color: #f0e090;
+	transition: all 1s;
+}
+.alert-danger {
+	transition: all 1s;
+}
+.alert-danger:hover {
+	background-color: #f09090;
+	transition: all 1s;
+}

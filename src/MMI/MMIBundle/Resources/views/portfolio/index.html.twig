@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{ parent() }}
+<h1>Admin Panel - Portfolio</h1>
+<div class="line"></div>
+    <body>
+    <br>
+        <ul>
+            <li>
+            <a style="color:black" class="btn btn-default" href="{{ path('portfolio_new') }}">
+                    Ajouter un portfolio
+                </a>
+            </li>
+        </ul>
+        {% for entity in entities %}
+        <div class="portfolio">
+        <table class="records_list portfolio2" style="text-align:center;">
+        <tr>
+        <td class="port">{{ entity.nom }}</td>
+         <td class="port">{{ entity.prenom }}</td>
+         <td class="port">{{ entity.description }}</td>
+         <td class="port"><a style="color:white" href="{{ entity.link }}">Lien</a></td>
+         <td class="port"><a class="btn btn-default" href="{{ path('portfolio_show', { 'id': entity.id }) }}">Voir</a></td>
+         <td class="port"><a class="btn btn-default" href="{{ path('portfolio_edit', { 'id': entity.id }) }}">Modifier</a></td>
+         </tr>
+         </table>
+     </div>
+     {% endfor %}
+ </body>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "::layoutFOS.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="connect">
+<img class="img2" src="{{ asset('bundles/mmimmi/images/logo.png') }}" alt="logo">
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+    <label for="username">Nom</label><br>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /><br><br>
+
+    <label for="password">Mot de passe</label><br>
+    <input type="password" id="password" name="_password" required="required" /><br><br><br>
+
+
+    <input type="submit" id="_submit" name="_submit" value="Connection" />
+</form>
+</div>
+{% endblock fos_user_content %}

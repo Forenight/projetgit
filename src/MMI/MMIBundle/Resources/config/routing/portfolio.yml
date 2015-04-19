@@ -1,0 +1,30 @@
+portfolio:
+    path:     /
+    defaults: { _controller: "MMIMMIBundle:portfolio:index" }
+
+portfolio_show:
+    path:     /{id}/show
+    defaults: { _controller: "MMIMMIBundle:portfolio:show" }
+
+portfolio_new:
+    path:     /new
+    defaults: { _controller: "MMIMMIBundle:portfolio:new" }
+
+portfolio_create:
+    path:     /create
+    defaults: { _controller: "MMIMMIBundle:portfolio:create" }
+    requirements: { _method: post }
+
+portfolio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MMIMMIBundle:portfolio:edit" }
+
+portfolio_update:
+    path:     /{id}/update
+    defaults: { _controller: "MMIMMIBundle:portfolio:update" }
+    requirements: { _method: post|put }
+
+portfolio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MMIMMIBundle:portfolio:delete" }
+    requirements: { _method: post|delete }

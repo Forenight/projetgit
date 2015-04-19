@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+{{parent()}}
+<h1>Admin Panel - Videos</h1>
+<div class="line"></div>
+<body>
+ <br>
+ <ul>
+    <li>
+        <a style="color:black" class="btn btn-default" href="{{ path('videos_new') }}">
+        Ajouter une vidéo
+        </a>
+    </li>
+</ul>
+    {% for entity in entities %}
+    <div class="portfolio">
+    <table class="records_list portfolio2">
+    <tr>
+        <td class="port">{{ entity.nom }}</td>
+        <td class="port">{{ entity.description }}</td>
+        <td class="port">{{ entity.Playlist }}</td>
+        <td class="port">{% if entity.time %}{{ entity.time|date('Y-m-d H:i:s') }}{% endif %}</td>
+        <td class="port">{{ entity.auteur }}</td>
+        <td class="port"><a class="btn btn-default" href="{{ path('videos_show', { 'id': entity.id }) }}">Voir</a></td>
+        <td class="port"><a class="btn btn-default" href="{{ path('videos_edit', { 'id': entity.id }) }}">Modifier</a></td>
+    </tr>
+    </table>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}

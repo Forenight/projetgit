@@ -1,0 +1,63 @@
+mmimmi_portfolio:
+    resource: "@MMIMMIBundle/Resources/config/routing/portfolio.yml"
+    prefix:   /portfolio
+
+mmimmi_agenda:
+    resource: "@MMIMMIBundle/Resources/config/routing/agenda.yml"
+    prefix:   /agenda
+
+mmimmi_news:
+    resource: "@MMIMMIBundle/Resources/config/routing/news.yml"
+    prefix:   /news
+
+mmimmi_videos:
+    resource: "@MMIMMIBundle/Resources/config/routing/videos.yml"
+    prefix:   /videos
+
+mmimmi_playlist:
+    resource: "@MMIMMIBundle/Resources/config/routing/playlist.yml"
+    prefix:   /playlist
+
+mmi_accueil:
+    path: /
+    defaults: {_controller: MMIMMIBundle:Default:accueil}
+
+mmi_agenda:
+    path: /agenda
+    defaults: {_controller: MMIMMIBundle:Default:agenda}
+
+mmi_news:
+    path: /news
+    defaults: {_controller: MMIMMIBundle:Default:news}
+
+mmi_events:
+    path: /events
+    defaults: {_controller: MMIMMIBundle:Default:events}
+
+mmi_portfolio:
+    path: /portfolio
+    defaults: {_controller: MMIMMIBundle:Default:portfolio}
+
+mmi_videos:
+    path: /videos
+    defaults: {_controller: MMIMMIBundle:Default:videos}
+
+mmi_playlist:
+    path: /playlist
+    defaults: {_controller: MMIMMIBundle:Default:playlist}
+
+mmi_direct:
+    path: /direct
+    defaults: {_controller: MMIMMIBundle:Default:direct}
+
+mmi_grille:
+    path: /grille
+    defaults: {_controller: MMIMMIBundle:Default:grille}
+
+mmi_news_ajax:
+    path: /get-news
+    defaults: {_controller: MMIMMIBundle:Default:getNews}
+
+MMIMMIBundle_evenements:
+        resource: "@MMIMMIBundle/Resources/config/routing/evenements.yml"
+        prefix:   /evenements

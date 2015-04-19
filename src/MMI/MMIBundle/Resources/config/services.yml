@@ -1,0 +1,11 @@
+services:
+#    mmimmi.example:
+#        class: MMI\MMIBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+
+#    mmi_grille.calendar_listener:
+#        class: MMI\MMIBundle\grilleController\CalendarEventListener
+#        tags:
+#            - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents }
+#        arguments: ['@doctrine.orm.entity_manager']
